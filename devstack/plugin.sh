@@ -21,7 +21,7 @@ source $DEST/ovn-bgp-agent/devstack/lib/ovn-bgp-agent
 if is_service_enabled q-svc ovn-controller; then
     # Stack
     if [[ "$1" == "stack" && "$2" == "install" ]]; then
-        install_frr
+        #install_frr #frr version mismatch @ ubuntu 20.04 (7.2.1 < 8.1)
         configure_frr
         init_frr
         install_ovn_bgp_agent
